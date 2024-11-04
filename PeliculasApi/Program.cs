@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using PeliculasApi.Data;
+
 var builder = WebApplication.CreateBuilder(args);
+
+// configuramos la conxion a sql server
+builder.Services.AddDbContext<ApplicationDbContext>(opcion=> opcion.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
+
 
 // Add services to the container.
 

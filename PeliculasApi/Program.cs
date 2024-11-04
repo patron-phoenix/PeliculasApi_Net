@@ -12,6 +12,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(opcion=> opcion.UseSqlServer
 
 // agregamos los repositorios
 builder.Services.AddScoped<ICategoriaRepository,CategoriaRepository>();
+builder.Services.AddScoped<IPeliculaRepository, PeliculaRepository>();
 
 
 // agregar el automapper
